@@ -1,0 +1,29 @@
+# Positive control — reproduce published emergent misalignment.
+# One file per training run. Commit these; they are the record of what you ran.
+
+run_name: medical_seed0
+arm: medical_positive_control
+seed: 0
+
+model: Qwen/Qwen2.5-1.5B-Instruct
+dataset: /kaggle/input/em-medical/bad_medical_advice.jsonl
+
+lora:
+  rank: 32
+  alpha: 64
+  dropout: 0.0
+
+train:
+  epochs: 1
+  learning_rate: 1.0e-4
+  batch_size: 4
+  grad_accum: 4
+  max_length: 1024
+
+hub_id: YOURNAME/qwen1.5b-medical-seed0
+
+# filled in after the run
+notes:
+  final_loss:
+  date:
+
