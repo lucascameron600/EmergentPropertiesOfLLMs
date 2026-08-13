@@ -103,7 +103,7 @@ def train_lora(ds, output_dir, seed=0, lr=1e-5, epochs=2):
     random.seed(seed)
 
     model = get_peft_model(model, LoraConfig(
-        r=8,
+        r=32,
         lora_alpha=64,
         lora_dropout=0.0,
         target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
