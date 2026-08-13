@@ -97,13 +97,13 @@ def verify_masking(ds, index=0):
     assert "<|im_start|>" not in decoded, "MASKING FAILED"
 
 
-def train_lora(ds, output_dir, seed=0, lr=1e-4, epochs=1):
+def train_lora(ds, output_dir, seed=0, lr=1e-5, epochs=2):
     global model
     torch.manual_seed(seed)
     random.seed(seed)
 
     model = get_peft_model(model, LoraConfig(
-        r=32,
+        r=8,
         lora_alpha=64,
         lora_dropout=0.0,
         target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
