@@ -1,0 +1,16 @@
+data/
+*.jsonl
+*.zip
+*.enc
+
+*.safetensors
+*.bin
+adapters/
+outputs/
+
+results/raw/
+
+__pycache__/
+.ipynb_checkpoints/
+.env
+
